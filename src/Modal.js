@@ -1,14 +1,18 @@
 
 
 import ViewModal from './ViewModal';
+import ReactImageMagnify from 'react-image-magnify';
 
 function Modal ({closeModal}) {
-
+ 
+    
+    const carImage = './iamges/car.jpg';
     return (   
+        
        <div>
         <ViewModal/>
       
-        <div className="w-4/5 h-4/5 bg-slate-300 rounded-2xl relative left-20 top-4 drop-shadow-lg shadow-slate-900"> 
+        <div className="w-4/5 h-4/5 bg-slate-300 rounded-2xl left-20 top-4 drop-shadow-lg shadow-slate-900"> 
         
         <div className=" flex justify-between w-full bg-slate-900 rounded-t-xl my-4 "> 
         
@@ -17,7 +21,19 @@ function Modal ({closeModal}) {
       
         </div>
         <div className="w-full relative bottom-4  "> 
-            <img src={require('./images/car.jpg')}></img>
+        <ReactImageMagnify {...{
+    smallImage: {
+        alt: 'car Image',
+        isFluidWidth: true,
+        src: './images/car.src'
+    },
+    largeImage: {
+        src: './images/car.src',
+        width: 1/5,
+        height: 1/5
+    }
+}} />
+      
         </div>
         
         </div>
